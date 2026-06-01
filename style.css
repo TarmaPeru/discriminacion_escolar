@@ -1,0 +1,653 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+html{
+    scroll-behavior:smooth;
+    scroll-padding-top:90px;
+}
+
+body{
+background:#f5f7fa;
+}
+
+header{
+position:fixed;
+width:100%;
+top:0;
+z-index:1000;
+background:#0b1f3a;
+}
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 8%;
+}
+
+.logo{
+color:white;
+font-size:25px;
+font-weight:bold;
+}
+
+.menu{
+display:flex;
+list-style:none;
+}
+
+.menu li{
+position:relative;
+}
+
+.menu li a{
+display:block;
+padding:15px 20px;
+color:white;
+text-decoration:none;
+}
+
+.menu li:hover{
+background:#163a67;
+}
+
+.submenu{
+display:none;
+position:absolute;
+top:100%;
+left:0;
+background:#163a67;
+list-style:none;
+min-width:200px;
+}
+
+.dropdown:hover .submenu{
+display:block;
+}
+
+.barra-buscador{
+    position:absolute;
+    top:170px;
+    left:80px;
+    z-index:9999;
+}
+
+.contenedor-buscador{
+    display:flex;
+    width:450px;
+}
+
+.contenedor-buscador input{
+    flex:1;
+    padding:12px;
+    border:none;
+    outline:none;
+}
+
+.contenedor-buscador button{
+    padding:12px;
+    border:none;
+    cursor:pointer;
+}
+
+/* ========================= */
+/* RESPONSIVE CELULAR */
+/* ========================= */
+
+@media(max-width:768px){
+
+    header{
+        position:relative;
+    }
+
+    nav{
+        flex-direction:column;
+        padding:15px;
+    }
+
+    .logo{
+        text-align:center;
+        font-size:22px;
+        margin-bottom:15px;
+    }
+
+    .menu{
+        flex-wrap:wrap;
+        justify-content:center;
+        width:100%;
+    }
+
+    .menu li a{
+        padding:10px 12px;
+        font-size:14px;
+    }
+
+    .submenu{
+        position:static;
+        min-width:100%;
+    }
+
+    /* BUSCADOR */
+
+    .barra-buscador{
+        position:relative;
+        top:0;
+        left:0;
+        margin:15px auto;
+        display:flex;
+        justify-content:center;
+    }
+
+    .contenedor-buscador{
+        width:95%;
+        max-width:350px;
+        flex-wrap:wrap;
+        gap:5px;
+    }
+
+    .contenedor-buscador input{
+        width:100%;
+    }
+
+    .contenedor-buscador button{
+        flex:1;
+    }
+
+}
+
+.slider{
+height:100vh;
+position:relative;
+overflow:hidden;
+}
+
+.slide{
+position:absolute;
+width:100%;
+height:100%;
+opacity:0;
+transition:1s;
+}
+
+.slide.active{
+opacity:1;
+}
+
+.slide img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.texto-slider{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+color:white;
+text-align:center;
+background:rgba(0,0,0,.5);
+padding:30px;
+border-radius:10px;
+}
+
+.contenedor{
+padding:100px 10%;
+}
+
+h2{
+text-align:center;
+margin-bottom:40px;
+font-size:40px;
+color:#0b1f3a;
+}
+
+.nosotros{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+align-items:center;
+}
+
+.foto img{
+width:100%;
+border-radius:15px;
+}
+
+.texto{
+font-size:18px;
+line-height:30px;
+}
+
+.grid-dinamico{
+display:grid;
+grid-template-columns:350px 1fr;
+gap:30px;
+align-items: stretch;
+}
+
+.box-img{
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+.box-img img{
+    width:100%;
+    height:100%;
+    min-height:450px;
+    object-fit:cover;
+    display:block;
+}
+
+.box-texto{
+background:white;
+padding:40px;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,.1);
+min-height:300px;
+}
+
+.acordeon{
+max-width:900px;
+margin:auto;
+}
+
+.pregunta{
+width:100%;
+padding:20px;
+font-size:18px;
+background:#0b1f3a;
+color:white;
+border:none;
+cursor:pointer;
+margin-top:10px;
+}
+
+.respuesta{
+display:none;
+padding:20px;
+background:white;
+border:1px solid #ddd;
+}
+
+.carrusel{
+display:flex;
+overflow-x:auto;
+gap:20px;
+padding:20px;
+}
+
+.autor{
+    min-width:320px;
+    background:white;
+    border-radius:15px;
+    padding:25px;
+    text-align:center;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+.autor img{
+    width:160px;
+    height:160px;
+    border-radius:50%;
+    object-fit:cover;
+    margin-bottom:15px;
+    border:5px solid #0b1f3a;
+}
+
+.autor h3{
+    color:#0b1f3a;
+    margin-bottom:10px;
+}
+
+.autor p{
+    line-height:1.6;
+}
+
+.bibliografia{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:30px;
+}
+
+.card{
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.img-ref{
+    width:100%;
+    height:220px;
+    overflow:hidden;
+    background:#dfe6ee;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:24px;
+}
+
+.img-ref img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+    transition:.4s;
+}
+
+.card:hover .img-ref img{
+    transform:scale(1.08);
+    object-fit: cover;
+}
+
+
+.contenido-ref{
+    padding:20px;
+}
+
+.contenido-ref h3{
+    color:#0b1f3a;
+    margin-bottom:10px;
+}
+
+.contenido-ref p{
+    margin-bottom:15px;
+    line-height:1.6;
+}
+
+.contenido-ref a{
+    display:inline-block;
+    padding:10px 20px;
+    background:#0b1f3a;
+    color:white;
+    text-decoration:none;
+    border-radius:5px;
+}
+
+/* FOOTER */
+
+.footer{
+    background:linear-gradient(135deg,#081524,#0b1f3a);
+    color:white;
+    margin-top:80px;
+}
+
+.footer-contenedor{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:40px;
+    padding:60px 10%;
+}
+
+.footer-col h3{
+    margin-bottom:20px;
+    font-size:22px;
+    position:relative;
+}
+
+.footer-col h3::after{
+    content:"";
+    width:60px;
+    height:3px;
+    background:#4da3ff;
+    position:absolute;
+    left:0;
+    bottom:-8px;
+}
+
+.footer-col p{
+    line-height:1.8;
+    color:#d6d6d6;
+}
+
+.footer-col ul{
+    list-style:none;
+}
+
+.footer-col ul li{
+    margin:12px 0;
+}
+
+.footer-col ul li a{
+    text-decoration:none;
+    color:#d6d6d6;
+    transition:.3s;
+}
+
+.footer-col ul li a:hover{
+    color:#4da3ff;
+    padding-left:8px;
+}
+
+.footer-bottom{
+    text-align:center;
+    padding:20px;
+    border-top:1px solid rgba(255,255,255,.1);
+    color:#bdbdbd;
+    font-size:14px;
+}
+
+/* ========================= */
+/* RESPONSIVE TABLET */
+/* ========================= */
+
+@media(max-width:992px){
+
+    nav{
+        flex-direction:column;
+        padding:15px;
+    }
+
+    .menu{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .nosotros{
+        grid-template-columns:1fr;
+    }
+
+    .grid-dinamico{
+        grid-template-columns:1fr;
+    }
+
+    .texto-slider h1{
+        font-size:40px;
+    }
+
+    .texto-slider p{
+        font-size:18px;
+    }
+
+}
+
+/* BOTÓN FLOTANTE WHATSAPP */
+
+.whatsapp-float{
+  position:fixed;
+  bottom:25px;
+  right:25px;
+
+  background:#25D366;
+  color:white;
+
+  display:flex;
+  align-items:center;
+  gap:12px;
+
+  padding:15px 20px;
+
+  border-radius:50px;
+
+  text-decoration:none;
+
+  box-shadow:0 5px 15px rgba(0,0,0,0.3);
+
+  z-index:9999;
+
+  transition:0.3s;
+}
+
+.whatsapp-float:hover{
+  transform:scale(1.05);
+  background:#1ebe5d;
+}
+
+.whatsapp-float img{
+  width:35px;
+  height:35px;
+}
+
+.whatsapp-float span{
+  font-size:16px;
+  font-weight:bold;
+}
+
+/* ========================= */
+/* RESPONSIVE CELULAR */
+/* ========================= */
+
+@media(max-width:768px){
+
+    .contenedor{
+        padding:80px 20px;
+    }
+
+    .logo{
+        font-size:20px;
+        text-align:center;
+    }
+
+    .menu{
+        flex-direction:column;
+        width:100%;
+        text-align:center;
+    }
+
+    .menu li{
+        width:100%;
+    }
+
+    .menu li a{
+        padding:12px;
+    }
+
+    .submenu{
+        position:static;
+        width:100%;
+    }
+
+    .slider{
+        height:70vh;
+    }
+
+    .texto-slider{
+        width:90%;
+        padding:20px;
+    }
+
+    .texto-slider h1{
+        font-size:30px;
+    }
+
+    .texto-slider p{
+        font-size:16px;
+    }
+
+    h2{
+        font-size:30px;
+    }
+
+    .foto img{
+        width:100%;
+    }
+
+    .grid-dinamico{
+        grid-template-columns:1fr;
+    }
+
+    .box-img,
+    .box-texto{
+        min-height:220px;
+    }
+
+    .autor{
+        min-width:260px;
+    }
+
+    .autor img{
+        width:120px;
+        height:120px;
+    }
+
+    .pregunta{
+        font-size:16px;
+        padding:15px;
+    }
+
+    .bibliografia{
+        grid-template-columns:1fr;
+    }
+
+    .footer-contenedor{
+        grid-template-columns:1fr;
+        text-align:center;
+    }
+
+    .footer-col h3::after{
+        left:50%;
+        transform:translateX(-50%);
+    }
+
+}
+
+/* ========================= */
+/* CELULARES PEQUEÑOS */
+/* ========================= */
+
+@media(max-width:480px){
+
+    .slider{
+        height:60vh;
+    }
+
+    .texto-slider h1{
+        font-size:24px;
+    }
+
+    .texto-slider p{
+        font-size:14px;
+    }
+
+    h2{
+        font-size:26px;
+    }
+
+    .autor{
+        min-width:220px;
+    }
+
+    .autor img{
+        width:100px;
+        height:100px;
+    }
+
+    .box-img,
+    .box-texto{
+        padding:25px;
+    }
+
+}
